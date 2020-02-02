@@ -1,0 +1,6 @@
+Name: Indepdent sample t-test
+Description: Interactively generate code for an indepdent sample t-test
+Binding: sssttest
+Interactive: true
+
+

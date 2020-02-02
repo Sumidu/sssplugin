@@ -11,16 +11,16 @@ ifunc_run_as_addin <- function() {
 
 ifunc_show_alert <- function(run_as_addin) {
   ## Display the alert only on first time launch
-  show_alert <- is.null(getOption("ssplugin_hide_alert"))
+  show_alert <- is.null(getOption("sssplugin_hide_alert"))
   if (show_alert) {
-    options(ssplugin_hide_alert = TRUE)
-    div(class = "alert alert-warning alert-dismissible",
-        HTML('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'),
+    options(sssplugin_hide_alert = TRUE)
+    shiny::div(class = "alert alert-warning alert-dismissible",
+        shiny::HTML('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'),
         HTML(gettext("<strong>Warning :</strong> This interface doesn't do anything by itself.", domain = "sssplugin")),
         if (run_as_addin) {
-          HTML(gettext("It will generate R code, insert it in your current R script, and you'll have to run it yourself.", domain = "sssplugin"))
+          shiny::HTML(gettext("It will generate R code, insert it in your current R script, and you'll have to run it yourself.", domain = "sssplugin"))
         } else {
-          HTML(gettext("It only generates R code you'll have to copy/paste into your script and run yourself.", domain = "sssplugin"))
+          shiny::HTML(gettext("It only generates R code you'll have to copy/paste into your script and run yourself.", domain = "sssplugin"))
         }
     )}
 }
@@ -28,9 +28,9 @@ ifunc_show_alert <- function(run_as_addin) {
 #' Returns custom CSS content
 
 ifunc_get_css <- function() {
-  css.file <- system.file(file.path("shiny", "css", "ifuncs.css"), package = "questionr")
+  css.file <- system.file(file.path("shiny", "css", "ifuncs.css"), package = "sssplugin")
   out <- paste(readLines(css.file),collapse="\n")
-  HTML(out)
+  shiny::HTML(out)
 }
 
 #' Return first non-null of two values
@@ -43,6 +43,15 @@ ifunc_get_css <- function() {
 }
 
 
+#' Wrap an expr to suppress warnings and errors
+#'
+#' @param expr
+#'
+#' @return a list object containing output, warnings and errors
+#' @export
+#'
+#' @examples
+#' myTryCatch(log(-1))
 myTryCatch <- function(expr) {
   warn <- err <- NULL
   value <- withCallingHandlers(

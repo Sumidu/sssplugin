@@ -25,8 +25,8 @@ source("R/utils.R")
 ##' @import rstudioapi
 ##' @import miniUI
 ##' @importFrom highr hi_html
-##' @importFrom htmltools htmlEscape
-##' @export sssttest
+## @importFrom htmltools htmlEscape
+##' @export
 sssttest <- function(obj=NULL, ivar_name = NULL, dvar_name = NULL) {
 
   run_as_addin <- ifunc_run_as_addin()
@@ -164,7 +164,7 @@ sssttest <- function(obj=NULL, ivar_name = NULL, dvar_name = NULL) {
       conf_level <- input$conf
       alter <- input$alternative
       # construct function call
-      glue("t.test({dv} ~ {iv}, data = {ob}, conf.level = {conf_level}, alternative = \"{alter}\")")
+      glue::glue("t.test({dv} ~ {iv}, data = {ob}, conf.level = {conf_level}, alternative = \"{alter}\")")
     })
 
     # ivar selecter ----
@@ -196,7 +196,7 @@ sssttest <- function(obj=NULL, ivar_name = NULL, dvar_name = NULL) {
       req(input$obj_name)
       iv <- input$ivar_name
       ob <- input$obj_name
-      d <- glue("length(levels(factor({ob}${iv})))")
+      d <- paste0("length(levels(factor(",ob,"$",iv,")))")
 
       x <- eval(parse(text = d))
       if(x != 2){
@@ -222,7 +222,7 @@ sssttest <- function(obj=NULL, ivar_name = NULL, dvar_name = NULL) {
       # if errors capture
       if(!is.null(res$error)){
         msg <- as.character(res$error)
-        op <- glue("This produces an Error:\n{msg}")
+        op <- glue::glue("This produces an Error:\n{msg}")
         return(op )
       }
 
@@ -231,7 +231,7 @@ sssttest <- function(obj=NULL, ivar_name = NULL, dvar_name = NULL) {
       oput <- paste(capture.output(res$value
         #t.test(len ~ supp, data = ToothGrowth)
         ),collapse = "\n")
-      glue("> ",d,"\nOutput:\n",oput)
+      glue::glue("> ",d,"\nOutput:\n",oput)
     })
 
     generate_code <- reactive({

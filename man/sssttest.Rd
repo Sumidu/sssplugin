@@ -2,24 +2,30 @@
 % Please edit documentation in R/gadgetTest.R
 \name{sssttest}
 \alias{sssttest}
-\title{Plugincode}
+\title{Interactive t-test}
 \usage{
 sssttest(obj = NULL, ivar_name = NULL, dvar_name = NULL)
 }
 \arguments{
-\item{obj}{the dataframe}
+\item{obj}{data frame to operate on}
 
-\item{ivar_name}{Indepedent variable}
+\item{ivar_name}{name of the column for independent variable}
 
-\item{dvar_name}{depedent variable}
+\item{dvar_name}{name of the column for dependent variable}
 }
 \value{
-the t-test code
+The function launches a shiny app in the system web browser. The recoding code is returned in the console
+when the app is closed with the "Done" button.
 }
 \description{
-Plugincode
+This function launches a shiny app in a web browser in order to do
+interactive t-test
 }
 \examples{
-df_test <- ToothGrowth
-sssttest(df_test, "supp", "len")
+\dontrun{data(ToothGrowth)
+sssttest(ToothGrowth)
+}
+}
+\author{
+André Calero Valdez <andrecalerovaldez@gmail.com>
 }

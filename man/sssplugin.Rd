@@ -6,6 +6,6 @@
 \title{RStudio Addins}
 \description{
 Use RStudio addins to execute \R functions interactively within RStudio.
-See \code{\link{sssttest}()} 
+See \code{\link{sssttest}()}
 for an examples of R functions that are exported.
 }

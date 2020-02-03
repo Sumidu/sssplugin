@@ -1,6 +1,6 @@
 Package: sssplugin
 Title: A package that wraps most statistical tests as an addin
-Version: 0.0.2
+Version: 0.0.2.9000
 Authors@R: 
     person(given = "André",
            family = "Calero Valdez",

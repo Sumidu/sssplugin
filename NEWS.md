@@ -1,3 +1,5 @@
+# sssplugin (development version)
+
 # sssplugin 0.0.2
 
 first real realease

@@ -18,7 +18,8 @@ Suggests:
     janitor,
     forcats,
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 Imports: 
     shiny (>= 0.13),
     miniUI (>= 0.1.1),

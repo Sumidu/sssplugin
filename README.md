@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.org/Sumidu/sssplugin.svg?branch=master)](https://travis-ci.org/Sumidu/sssplugin)
+[![Codecov test
+coverage](https://codecov.io/gh/Sumidu/sssplugin/branch/master/graph/badge.svg)](https://codecov.io/gh/Sumidu/sssplugin?branch=master)
 <!-- badges: end -->
 
 The goal of sssplugin is to …

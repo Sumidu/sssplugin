@@ -33,7 +33,7 @@ sssttest <- function(obj=NULL, ivar_name = NULL, dvar_name = NULL) {
 
   # is a param given??
   if (is.null(obj)) {
-    if (ifunc_run_as_addin()) {
+    if (run_as_addin) {
       context <- rstudioapi::getActiveDocumentContext()
       obj <- context$selection[[1]]$text
       if (obj == "") obj <- NULL
@@ -291,6 +291,6 @@ if(F) {
   df2$gender_rec <- recode(df2$gender, "rather not say" = "male")
   df2$gender_rec <- as.character(df2$gender_rec)
 
-  sssttest()
+  #sssttest()
 }
 

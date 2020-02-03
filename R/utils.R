@@ -1,5 +1,6 @@
 #' Check if we are currently running as an rstudio addin
 #' @import rstudioapi
+#' @importFrom utils "capture.output"
 
 ifunc_run_as_addin <- function() {
   rstudioapi::isAvailable() && rstudioapi::getActiveDocumentContext()$id != "#console"
@@ -45,7 +46,7 @@ ifunc_get_css <- function() {
 
 #' Wrap an expr to suppress warnings and errors
 #'
-#' @param expr
+#' @param expr The expression to wrap
 #'
 #' @return a list object containing output, warnings and errors
 #' @export

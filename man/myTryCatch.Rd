@@ -7,7 +7,7 @@
 myTryCatch(expr)
 }
 \arguments{
-\item{expr}{}
+\item{expr}{The expression to wrap}
 }
 \value{
 a list object containing output, warnings and errors

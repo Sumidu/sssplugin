@@ -1,13 +1,13 @@
 Package: sssplugin
 Title: A package that wraps most statistical tests as an addin
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: 
     person(given = "André",
            family = "Calero Valdez",
            role = c("aut", "cre"),
            email = "andrecalerovaldez@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package will provide a set of tools to generate code statistical analyses.
 Encoding: UTF-8
 LazyData: true
 Suggests: 

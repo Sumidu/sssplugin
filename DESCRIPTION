@@ -6,7 +6,7 @@ Authors@R:
            family = "Calero Valdez",
            role = c("aut", "cre"),
            email = "andrecalerovaldez@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           comment = c(ORCID = "0000-0002-6214-1461"))
 Description: This package will provide a set of tools to generate code statistical analyses.
 Encoding: UTF-8
 LazyData: true

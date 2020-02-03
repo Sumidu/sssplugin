@@ -28,7 +28,8 @@ Imports:
     styler,
     highr,
     stats,
-    utils
+    utils,
+    magrittr
 License: MIT + file LICENSE
 RoxygenNote: 7.0.2
 VignetteBuilder: knitr

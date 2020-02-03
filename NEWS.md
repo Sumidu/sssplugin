@@ -2,7 +2,7 @@
 
 # sssplugin 0.0.2
 
-first real realease
+first real release
 
 # sssplugin 0.0.1.9000
 

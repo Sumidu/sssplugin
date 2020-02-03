@@ -19,7 +19,8 @@ Suggests:
     forcats,
     knitr,
     rmarkdown,
-    covr
+    covr,
+    spelling
 Imports: 
     shiny (>= 0.13),
     miniUI (>= 0.1.1),
@@ -33,3 +34,4 @@ Imports:
 License: MIT + file LICENSE
 RoxygenNote: 7.0.2
 VignetteBuilder: knitr
+Language: en-US
